@@ -159,6 +159,10 @@ void changeMinesBoard(int** board, int length, int r, int c) {
 		changeMinesBoard(board, length, r + 1, c);
 		changeMinesBoard(board, length, r, c - 1);
 		changeMinesBoard(board, length, r, c + 1);
+		changeMinesBoard(board, length, r - 1, c + 1);
+		changeMinesBoard(board, length, r - 1, c - 1);
+		changeMinesBoard(board, length, r + 1, c + 1);
+		changeMinesBoard(board, length, r + 1, c - 1);
 	}
 }
 
