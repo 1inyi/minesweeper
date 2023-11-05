@@ -153,17 +153,16 @@ void changeMinesBoard(int** board, int length, int r, int c) {
 	if (r < 0 || r >= length || c < 0 || c >= length || board[r][c] >= 9) return;
 
 	board[r][c] += 10;
+	if (board[r][c] != 10) return;
 
-	if (board[r][c] == 10) {
-		changeMinesBoard(board, length, r - 1, c);
-		changeMinesBoard(board, length, r + 1, c);
-		changeMinesBoard(board, length, r, c - 1);
-		changeMinesBoard(board, length, r, c + 1);
-		changeMinesBoard(board, length, r - 1, c + 1);
-		changeMinesBoard(board, length, r - 1, c - 1);
-		changeMinesBoard(board, length, r + 1, c + 1);
-		changeMinesBoard(board, length, r + 1, c - 1);
-	}
+	changeMinesBoard(board, length, r - 1, c);
+	changeMinesBoard(board, length, r + 1, c);
+	changeMinesBoard(board, length, r, c - 1);
+	changeMinesBoard(board, length, r, c + 1);
+	changeMinesBoard(board, length, r - 1, c + 1);
+	changeMinesBoard(board, length, r - 1, c - 1);
+	changeMinesBoard(board, length, r + 1, c + 1);
+	changeMinesBoard(board, length, r + 1, c - 1);
 }
 
 int checkMinesBoard(int** board, int length) {
