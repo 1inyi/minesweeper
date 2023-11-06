@@ -7,18 +7,18 @@
 #define ly 10
 
 int main() {
+	printf("开始游戏（1）\t退出（0）\n");
+	int option = -1;
 	while (1) {
-		int option = 0;
-		printf("开始游戏（1）\t退出（0）\n");
-		while (1) {
-			printf("请输入对应的数字序号：");
-			int temp = scanf_s("%d", &option, sizeof(option));
-			if (temp == 1 && option == 1 || option == 0) break;
-			else {
-				int trash;
-				while ((trash = getchar()) != '\n' && trash == EOF);
-			}
+		printf("请输入对应的数字序号：");
+		int temp = scanf_s("%d", &option, sizeof(option));
+		if (temp == 1 && option == 1 || option == 0) break;
+		else {
+			int trash;
+			while ((trash = getchar()) != '\n' && trash != EOF);
 		}
+	}
+	while (1) {
 		if (!option) break;
 
 		int len = 10, mines = 10;
@@ -51,7 +51,7 @@ int main() {
 			if (temp == 1 && option == 1 || option == 0) break;
 			else {
 				int trash;
-				while ((trash = getchar()) != '\n' && trash == EOF);
+				while ((trash = getchar()) != '\n' && trash != EOF);
 			}
 		}
 		if (!option) break;
